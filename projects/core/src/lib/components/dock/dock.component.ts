@@ -3,6 +3,7 @@ import {Component, Input} from '@angular/core';
 export interface Item {
   icon?: string;
   value?: number;
+  click?: () => void;
 }
 
 @Component({
