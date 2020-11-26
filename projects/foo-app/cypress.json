@@ -1,0 +1,5 @@
+{
+  "integrationFolder": "projects/foo-app/cypress/integration",
+  "supportFile": "projects/foo-app/cypress/support/index.ts",
+  "baseUrl": "http://localhost:4200"
+}

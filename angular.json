@@ -34,11 +34,52 @@
           "options": {
             "tsConfig": [
               "projects/core/tsconfig.lib.json",
-              "projects/core/tsconfig.spec.json"
+              "projects/core/tsconfig.spec.json",
+              "projects/core/cypress/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "core:serve",
+            "configFile": "projects/core/cypress.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "core:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "core:serve",
+            "watch": true,
+            "headless": false,
+            "configFile": "projects/core/cypress.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "core:serve:production"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "core:serve",
+            "watch": true,
+            "headless": false,
+            "configFile": "projects/core/cypress.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "core:serve:production"
+            }
           }
         }
       }
@@ -142,7 +183,7 @@
             "tsConfig": [
               "projects/foo-app/tsconfig.app.json",
               "projects/foo-app/tsconfig.spec.json",
-              "projects/foo-app/e2e/tsconfig.json"
+              "projects/foo-app/cypress/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -150,10 +191,38 @@
           }
         },
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@briebug/cypress-schematic:cypress",
           "options": {
-            "protractorConfig": "projects/foo-app/e2e/protractor.conf.js",
-            "devServerTarget": "foo-app:serve"
+            "devServerTarget": "foo-app:serve",
+            "watch": true,
+            "headless": false,
+            "configFile": "projects/foo-app/cypress.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "foo-app:serve:production"
+            }
+          }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "foo-app:serve",
+            "configFile": "projects/foo-app/cypress.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "foo-app:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "foo-app:serve",
+            "watch": true,
+            "headless": false,
+            "configFile": "projects/foo-app/cypress.json"
           },
           "configurations": {
             "production": {
