@@ -4,6 +4,11 @@
   flex-direction: column;
 }
 
+mat-toolbar {
+  opacity: .4;
+  backdrop-filter: blur(20px);
+}
+
 .form-container {
   display: grid;
   place-items: center;
