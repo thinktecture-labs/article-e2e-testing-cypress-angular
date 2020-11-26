@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 10px;
+  padding: 20px;
+  padding-inline-start: 60px;
+}
+
+.apps {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
+  grid-gap: 20px;
+  flex: 1 1 auto;
+  padding: 20px;
+  place-items: center;
+}
+
+.dock {
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}

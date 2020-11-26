@@ -1,0 +1,9 @@
+<ul class="items">
+  <li *ngFor="let item of itemService.items">{{item}}</li>
+</ul>
+<div class="apps">
+  <labs-button *ngFor="let app of apps"></labs-button>
+</div>
+<div class="dock">
+  <labs-dock [items]="primaryApps" (click)="navigate()"></labs-dock>
+</div>
