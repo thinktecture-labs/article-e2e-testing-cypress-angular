@@ -35,51 +35,10 @@
             "tsConfig": [
               "projects/core/tsconfig.lib.json",
               "projects/core/tsconfig.spec.json",
-              "projects/core/cypress/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
-          }
-        },
-        "cypress-run": {
-          "builder": "@briebug/cypress-schematic:cypress",
-          "options": {
-            "devServerTarget": "core:serve",
-            "configFile": "projects/core/cypress.json"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "core:serve:production"
-            }
-          }
-        },
-        "cypress-open": {
-          "builder": "@briebug/cypress-schematic:cypress",
-          "options": {
-            "devServerTarget": "core:serve",
-            "watch": true,
-            "headless": false,
-            "configFile": "projects/core/cypress.json"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "core:serve:production"
-            }
-          }
-        },
-        "e2e": {
-          "builder": "@briebug/cypress-schematic:cypress",
-          "options": {
-            "devServerTarget": "core:serve",
-            "watch": true,
-            "headless": false,
-            "configFile": "projects/core/cypress.json"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "core:serve:production"
-            }
           }
         }
       }
