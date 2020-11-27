@@ -2,7 +2,8 @@
   display: grid;
   place-items: center;
   border-radius: 15px;
-  background: #AC9C99;
+  background: rgba(178,147,138, 0.2);
+  backdrop-filter: blur(20px) saturate(120%) brightness(120%);
   width: 60px;
   height: 60px;
 }
